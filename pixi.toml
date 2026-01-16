@@ -61,6 +61,7 @@ pip = ">=25.3,<26"
 wheel = ">=0.45.1,<0.46"
 ros-humble-fastcdr = ">=1.0.24,<2"
 ros-humble-xacro = ">=2.0.13,<3"
+ros-humble-rqt-tf-tree = ">=1.0.5,<2"
 
 [feature.jazzy]
 channels = ["https://prefix.dev/robostack-jazzy", "https://prefix.dev/conda-forge"]

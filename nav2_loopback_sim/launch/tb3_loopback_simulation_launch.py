@@ -29,7 +29,7 @@ from nav2_common.launch import RewrittenYaml
 
 def generate_launch_description() -> LaunchDescription:
     # Get the launch directory
-    bringup_dir = get_package_share_directory('nav2_bringup')
+    bringup_dir = get_package_share_directory('nav2_loopback_sim')
     loopback_sim_dir = get_package_share_directory('nav2_loopback_sim')
     launch_dir = os.path.join(bringup_dir, 'launch')
     sim_dir = get_package_share_directory('nav2_minimal_tb3_sim')
@@ -91,7 +91,7 @@ def generate_launch_description() -> LaunchDescription:
 
     declare_rviz_config_file_cmd = DeclareLaunchArgument(
         'rviz_config_file',
-        default_value=os.path.join(bringup_dir, 'rviz', 'nav2_default_view.rviz'),
+        default_value=os.path.join(get_package_share_directory('nav2_bringup'), 'rviz', 'nav2_default_view.rviz'),
         description='Full path to the RVIZ config file to use',
     )
 
@@ -123,7 +123,7 @@ def generate_launch_description() -> LaunchDescription:
     )
 
     rviz_cmd = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(os.path.join(launch_dir, 'rviz_launch.py')),
+        PythonLaunchDescriptionSource(os.path.join(get_package_share_directory('nav2_bringup'), 'launch', 'rviz_launch.py')),
         condition=IfCondition(use_rviz),
         launch_arguments={
             'namespace': namespace,
@@ -133,7 +133,7 @@ def generate_launch_description() -> LaunchDescription:
     )
 
     bringup_cmd = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(os.path.join(launch_dir, 'bringup_launch.py')),
+        PythonLaunchDescriptionSource(os.path.join(bringup_dir, 'bringup_launch.py')),
         launch_arguments={
             'namespace': namespace,
             'map': map_yaml_file,
