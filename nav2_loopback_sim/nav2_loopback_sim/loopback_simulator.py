@@ -22,6 +22,8 @@ from nav2_simple_commander.line_iterator import LineIterator
 from nav_msgs.msg import Odometry
 from nav_msgs.srv import GetMap
 import numpy as np
+if not hasattr(np, 'float'):
+    np.float = float  # Compatibility for transforms3d with NumPy >= 1.24
 import rclpy
 from rclpy.duration import Duration
 from rclpy.node import Node
