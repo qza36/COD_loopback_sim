@@ -28,7 +28,21 @@ pixi run build
 ```
 > [!WARNING] Do not use --symlink-install. Using symlinks currently causes nav2_loopback_sim to encounter errors during compilation.
 
-- launch the loopback simulation (will auto-build before launching)
+- launch the loopback simulation (will auto-build before launching). The sim includes `nav2_route`'s route_server with the turtlebot3 graph.
 ```bash
 pixi run sim
+```
+
+- launch the loopback simulation with a route-focused rviz view (shows route graph and waypoint markers)
+```bash
+pixi run route
+```
+
+- launch the standalone route editing tool (rviz2 + map_server, no simulation). Use this to create or edit `.geojson` route graph files.
+```bash
+pixi run route_tool
+```
+You can also specify a different map file:
+```bash
+pixi run bash -c 'source install/setup.bash && ros2 launch nav2_rviz_plugins route_tool.launch.py yaml_filename:=/path/to/your/map.yaml'
 ```

@@ -1,0 +1,170 @@
+{
+    "crs": {
+        "properties": {
+            "name": "urn:ogc:def:crs:EPSG::3857"
+        },
+        "type": "name"
+    },
+    "features": [
+        {
+            "geometry": {
+                "coordinates": [
+                    -1.8967599868774414,
+                    0.3111160099506378
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "frame": "map",
+                "id": 0
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -1.4387719631195068,
+                    1.5815080404281616
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "frame": "map",
+                "id": 1
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -0.39317798614501953,
+                    1.832129955291748
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "frame": "map",
+                "id": 2
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    1.0412739515304565,
+                    1.6852140426635742
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "frame": "map",
+                "id": 3
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    [
+                        [-1.8967599868774414, 0.3111160099506378],
+                        [-1.4387719631195068, 1.5815080404281616]
+                    ]
+                ],
+                "type": "MultiLineString"
+            },
+            "properties": {
+                "endid": 1,
+                "id": 100,
+                "startid": 0
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    [
+                        [-1.4387719631195068, 1.5815080404281616],
+                        [-1.8967599868774414, 0.3111160099506378]
+                    ]
+                ],
+                "type": "MultiLineString"
+            },
+            "properties": {
+                "endid": 0,
+                "id": 101,
+                "startid": 1
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    [
+                        [-1.4387719631195068, 1.5815080404281616],
+                        [-0.39317798614501953, 1.832129955291748]
+                    ]
+                ],
+                "type": "MultiLineString"
+            },
+            "properties": {
+                "endid": 2,
+                "id": 102,
+                "startid": 1
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    [
+                        [-0.39317798614501953, 1.832129955291748],
+                        [-1.4387719631195068, 1.5815080404281616]
+                    ]
+                ],
+                "type": "MultiLineString"
+            },
+            "properties": {
+                "endid": 1,
+                "id": 103,
+                "startid": 2
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    [
+                        [-0.39317798614501953, 1.832129955291748],
+                        [1.0412739515304565, 1.6852140426635742]
+                    ]
+                ],
+                "type": "MultiLineString"
+            },
+            "properties": {
+                "endid": 3,
+                "id": 104,
+                "startid": 2
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    [
+                        [1.0412739515304565, 1.6852140426635742],
+                        [-0.39317798614501953, 1.832129955291748]
+                    ]
+                ],
+                "type": "MultiLineString"
+            },
+            "properties": {
+                "endid": 2,
+                "id": 105,
+                "startid": 3
+            },
+            "type": "Feature"
+        }
+    ],
+    "name": "graph",
+    "type": "FeatureCollection"
+}

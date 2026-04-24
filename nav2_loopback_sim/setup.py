@@ -15,6 +15,7 @@ setup(
         (os.path.join('share', package_name), glob('launch/*')),
         (os.path.join('share', package_name), glob('maps/*')),
         (os.path.join('share', package_name), glob('graphs/*')),
+        (os.path.join('share', package_name, 'route_graph'), glob('route_graph/*')),
         (os.path.join('share', package_name), glob('params/*')),
     ],
     install_requires=['setuptools'],

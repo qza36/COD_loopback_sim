@@ -11,6 +11,8 @@ platforms = ["osx-arm64"]
 [feature.build.target.unix.tasks]
 build = "colcon build --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS=ON"
 sim = { cmd = "bash -c 'source install/setup.bash && ros2 launch nav2_loopback_sim tb3_loopback_simulation_launch.py'", depends-on = ["build"] }
+route = { cmd = "bash -c 'source install/setup.bash && ros2 launch nav2_loopback_sim tb3_loopback_simulation_launch.py rviz_config_file:=$(pwd)/nav2_loopback_sim/rviz/nav2_route_view.rviz'", depends-on = ["build"] }
+route_tool = { cmd = "bash -c 'source install/setup.bash && ros2 launch nav2_rviz_plugins route_tool.launch.py yaml_filename:=$(pwd)/nav2_loopback_sim/maps/tb3_sandbox.yaml'" }
 
 [dependencies]
 compilers = "*"
@@ -28,14 +30,14 @@ nanoflann = ">=1.6.1,<2"
 types-pyyaml = ">=6.0.12.20250915,<7"
 transforms3d = ">=0.4.2,<0.5"
 eigen = ">=3.4.0,<4"
-fmt = ">=11.2.0,<12"
+fmt = "*"
 spdlog = ">=1.15.3,<2"
 numpy = ">=1.26.4,<2"
 setuptools = ">=80.9.0,<81"
 wheel = ">=0.45.1,<0.46"
 
 [environments]
-default = { features = ["humble", "build"] } 
+default = { features = ["jazzy", "build"] }
 humble = { features = ["humble", "build"] }
 jazzy = { features = ["jazzy", "build"] }
 
@@ -68,5 +70,11 @@ ros-humble-rqt-tf-tree = ">=1.0.5,<2"
 channels = ["https://prefix.dev/robostack-jazzy", "https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/", "https://prefix.dev/conda-forge"]
 
 [feature.jazzy.dependencies]
+ros2-distro-mutex = { version = "0.14.*", build = "jazzy_*" }
 ros-jazzy-desktop = "*"
-ros-jazzy-rmw-cyclonedds-cpp = "*"
+ros-jazzy-navigation2 = "*"
+ros-jazzy-nav2-bringup = "*"
+ros-jazzy-nav2-route = "*"
+ros-jazzy-robot-state-publisher = "*"
+ros-jazzy-nav2-rviz-plugins = "*"
+ros-jazzy-tf-transformations = "*"
