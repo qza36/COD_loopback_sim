@@ -2,7 +2,7 @@
 name = "robostack_ros2_dev"
 description = "ROS 2 Development environment for macOS using RoboStack"
 authors = ["ZhiangQi <an9qi@yandex.com>"]
-channels = ["https://prefix.dev/conda-forge"] 
+channels = ["https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/", "https://prefix.dev/conda-forge"]
 platforms = ["osx-arm64"]
 
 [target.unix.activation]
@@ -10,6 +10,7 @@ platforms = ["osx-arm64"]
 
 [feature.build.target.unix.tasks]
 build = "colcon build --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS=ON"
+sim = { cmd = "bash -c 'source install/setup.bash && ros2 launch nav2_loopback_sim tb3_loopback_simulation_launch.py'", depends-on = ["build"] }
 
 [dependencies]
 compilers = "*"
@@ -39,7 +40,7 @@ humble = { features = ["humble", "build"] }
 jazzy = { features = ["jazzy", "build"] }
 
 [feature.humble]
-channels = ["https://prefix.dev/robostack-humble", "https://prefix.dev/conda-forge"]
+channels = ["https://prefix.dev/robostack-humble", "https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/", "https://prefix.dev/conda-forge"]
 
 [feature.humble.dependencies]
 ros-humble-desktop = "*"
@@ -64,7 +65,7 @@ ros-humble-xacro = ">=2.0.13,<3"
 ros-humble-rqt-tf-tree = ">=1.0.5,<2"
 
 [feature.jazzy]
-channels = ["https://prefix.dev/robostack-jazzy", "https://prefix.dev/conda-forge"]
+channels = ["https://prefix.dev/robostack-jazzy", "https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/", "https://prefix.dev/conda-forge"]
 
 [feature.jazzy.dependencies]
 ros-jazzy-desktop = "*"

@@ -21,9 +21,14 @@ This setup proved perfect for my current research into path planning and control
 curl -fsSL https://pixi.sh/install.sh | bash
 ```
 ## How to run 
-- clone tihs project 
+- clone this project 
 ```bash
 pixi install
-pixi run colcon build
+pixi run build
 ```
 > [!WARNING] Do not use --symlink-install. Using symlinks currently causes nav2_loopback_sim to encounter errors during compilation.
+
+- launch the loopback simulation (will auto-build before launching)
+```bash
+pixi run sim
+```
