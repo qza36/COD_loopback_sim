@@ -16,6 +16,7 @@ setup(
         (os.path.join('share', package_name), glob('maps/*')),
         (os.path.join('share', package_name), glob('graphs/*')),
         (os.path.join('share', package_name, 'route_graph'), glob('route_graph/*')),
+        (os.path.join('share', package_name, 'behavior_trees'), glob('behavior_trees/*')),
         (os.path.join('share', package_name), glob('params/*')),
     ],
     install_requires=['setuptools'],

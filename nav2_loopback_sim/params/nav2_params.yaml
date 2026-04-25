@@ -12,6 +12,7 @@ bt_navigator:
     # nav2_bt_navigator/navigate_through_poses_w_replanning_and_recovery.xml
     # They can be set here or via a RewrittenYaml remap from a parent launch file to Nav2.
     # plugin_lib_names: []  # Use Jazzy defaults — explicit list causes duplicate registrations
+    default_nav_to_pose_bt_xml: "/Users/zhiangqi/CLionProjects/COD_loopback_sim/install/nav2_loopback_sim/share/nav2_loopback_sim/behavior_trees/route_nav_to_pose.xml"
 
 bt_navigator_navigate_through_poses_rclcpp_node:
   ros__parameters:
@@ -109,7 +110,7 @@ local_costmap:
       inflation_layer:
         plugin: "nav2_costmap_2d::InflationLayer"
         cost_scaling_factor: 3.0
-        inflation_radius: 0.55
+        inflation_radius: 0.25
       voxel_layer:
         plugin: "nav2_costmap_2d::VoxelLayer"
         enabled: True
@@ -167,7 +168,7 @@ global_costmap:
       inflation_layer:
         plugin: "nav2_costmap_2d::InflationLayer"
         cost_scaling_factor: 3.0
-        inflation_radius: 0.55
+        inflation_radius: 0.25
       always_send_full_costmap: True
 
 map_server:
